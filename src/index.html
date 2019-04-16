@@ -5,11 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0">
   <title>Stencil Component Starter</title>
   <script src="/build/mycomponent.js"></script>
-
+  <style>
+    html {
+      --color-primary: #3b013b;
+      --color-primary-highlight: #750175;
+      --color-primary-inverse: white;
+    }
+  </style>
 </head>
 <body>
-
-  <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
-
+  <rz-stock-price stock-symbol="AAPL"></rz-stock-price>
+  <rz-stock-finder></rz-stock-finder>
 </body>
 </html>

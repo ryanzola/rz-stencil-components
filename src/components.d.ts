@@ -40,15 +40,57 @@ export namespace Components {
     */
     'middle'?: string;
   }
+
+  interface RzSideDrawer {
+    'drawerTitle': string;
+    'open': () => void;
+    'opened': boolean;
+  }
+  interface RzSideDrawerAttributes extends StencilHTMLAttributes {
+    'drawerTitle'?: string;
+    'opened'?: boolean;
+  }
+
+  interface RzSpinner {}
+  interface RzSpinnerAttributes extends StencilHTMLAttributes {}
+
+  interface RzStockFinder {}
+  interface RzStockFinderAttributes extends StencilHTMLAttributes {
+    'onRzSymbolSelected'?: (event: CustomEvent<string>) => void;
+  }
+
+  interface RzStockPrice {
+    'stockSymbol': string;
+  }
+  interface RzStockPriceAttributes extends StencilHTMLAttributes {
+    'stockSymbol'?: string;
+  }
+
+  interface RzTooltip {
+    'text': string;
+  }
+  interface RzTooltipAttributes extends StencilHTMLAttributes {
+    'text'?: string;
+  }
 }
 
 declare global {
   interface StencilElementInterfaces {
     'MyComponent': Components.MyComponent;
+    'RzSideDrawer': Components.RzSideDrawer;
+    'RzSpinner': Components.RzSpinner;
+    'RzStockFinder': Components.RzStockFinder;
+    'RzStockPrice': Components.RzStockPrice;
+    'RzTooltip': Components.RzTooltip;
   }
 
   interface StencilIntrinsicElements {
     'my-component': Components.MyComponentAttributes;
+    'rz-side-drawer': Components.RzSideDrawerAttributes;
+    'rz-spinner': Components.RzSpinnerAttributes;
+    'rz-stock-finder': Components.RzStockFinderAttributes;
+    'rz-stock-price': Components.RzStockPriceAttributes;
+    'rz-tooltip': Components.RzTooltipAttributes;
   }
 
 
@@ -58,12 +100,52 @@ declare global {
     new (): HTMLMyComponentElement;
   };
 
+  interface HTMLRzSideDrawerElement extends Components.RzSideDrawer, HTMLStencilElement {}
+  var HTMLRzSideDrawerElement: {
+    prototype: HTMLRzSideDrawerElement;
+    new (): HTMLRzSideDrawerElement;
+  };
+
+  interface HTMLRzSpinnerElement extends Components.RzSpinner, HTMLStencilElement {}
+  var HTMLRzSpinnerElement: {
+    prototype: HTMLRzSpinnerElement;
+    new (): HTMLRzSpinnerElement;
+  };
+
+  interface HTMLRzStockFinderElement extends Components.RzStockFinder, HTMLStencilElement {}
+  var HTMLRzStockFinderElement: {
+    prototype: HTMLRzStockFinderElement;
+    new (): HTMLRzStockFinderElement;
+  };
+
+  interface HTMLRzStockPriceElement extends Components.RzStockPrice, HTMLStencilElement {}
+  var HTMLRzStockPriceElement: {
+    prototype: HTMLRzStockPriceElement;
+    new (): HTMLRzStockPriceElement;
+  };
+
+  interface HTMLRzTooltipElement extends Components.RzTooltip, HTMLStencilElement {}
+  var HTMLRzTooltipElement: {
+    prototype: HTMLRzTooltipElement;
+    new (): HTMLRzTooltipElement;
+  };
+
   interface HTMLElementTagNameMap {
     'my-component': HTMLMyComponentElement
+    'rz-side-drawer': HTMLRzSideDrawerElement
+    'rz-spinner': HTMLRzSpinnerElement
+    'rz-stock-finder': HTMLRzStockFinderElement
+    'rz-stock-price': HTMLRzStockPriceElement
+    'rz-tooltip': HTMLRzTooltipElement
   }
 
   interface ElementTagNameMap {
     'my-component': HTMLMyComponentElement;
+    'rz-side-drawer': HTMLRzSideDrawerElement;
+    'rz-spinner': HTMLRzSpinnerElement;
+    'rz-stock-finder': HTMLRzStockFinderElement;
+    'rz-stock-price': HTMLRzStockPriceElement;
+    'rz-tooltip': HTMLRzTooltipElement;
   }
 
 
